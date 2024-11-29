@@ -156,3 +156,38 @@ if (window.location.pathname.includes('index.html')) {
 } else if (window.location.pathname.includes('projecte.html')) {
   animateProjectPage();
 }
+
+function animateProfile() {
+  const profileImage = document.querySelector('.profile-image img');
+  const profileTitle = document.querySelector('.personal-description h2');
+  const profileDescription = document.querySelector('.personal-description p');
+
+  // Reset initial state
+  profileImage.style.opacity = '0';
+  profileImage.style.transform = 'scale(0.7) rotate(-15deg)';
+
+  profileTitle.style.opacity = '0';
+  profileTitle.style.transform = 'translateY(30px)';
+
+  profileDescription.style.opacity = '0';
+  profileDescription.style.transform = 'translateY(40px)';
+
+  // Animate with staggered effect
+  setTimeout(() => {
+    profileImage.style.opacity = '1';
+    profileImage.style.transform = 'scale(1) rotate(0deg)';
+    profileImage.style.transition = 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+
+    setTimeout(() => {
+      profileTitle.style.opacity = '1';
+      profileTitle.style.transform = 'translateY(0)';
+      profileTitle.style.transition = 'all 0.6s ease';
+
+      setTimeout(() => {
+        profileDescription.style.opacity = '1';
+        profileDescription.style.transform = 'translateY(0)';
+        profileDescription.style.transition = 'all 0.6s ease';
+      }, 200);
+    }, 300);
+  }, 300);
+}
