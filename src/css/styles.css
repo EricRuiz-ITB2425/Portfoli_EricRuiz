@@ -87,7 +87,7 @@ body {
 
 .project-image {
     background-color: #f0f0f0;
-    height: 200px;
+    height: 300px; /* Aumentado de 200px a 300px */
     display: flex;
     align-items: center;
     justify-content: center;
